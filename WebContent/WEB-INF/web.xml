@@ -9,4 +9,12 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <error-page>
+  <exception-type>java.lang.Exception</exception-type>
+  <location>/erro.html</location>
+  </error-page>
+    <error-page>
+  <exception-type>404</exception-type>
+  <location>/Erro404.HTML</location>
+  </error-page>
 </web-app>
