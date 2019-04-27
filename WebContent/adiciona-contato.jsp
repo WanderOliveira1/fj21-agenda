@@ -10,9 +10,13 @@
 		<br/>
 		E-mail: <input	type="text" name="email" />
 		<br/>
-		EndereÃ§o: <input type="text"name="endereco" />
+		Endereço: <input type="text"name="endereco" />
 		<br/>
-		Data Nascimento: <input type="text"	name="dataNascimento" />
+		Data Nascimento: <input id="#dataNascimento" type="text" name="dataNascimento"/>
+		<script>
+		$("#dataNascimento").datepicker();
+		</script>
+		<campoData id= "dataNascimento"/>
 		<br/>
 		
 		 <input type="submit" value="Gravar" />

@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,7 +40,7 @@ public class adicionaContato extends HttpServlet {
 		out.println("erro de data");
 		throw new ServletException(e);
 	}
-		ContatoDao dao;
+	/*Chamada via html	ContatoDao dao;
 		try {
 			dao = new ContatoDao();
 			dao.insert(contato);
@@ -54,7 +55,21 @@ public class adicionaContato extends HttpServlet {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}	
+		}*/	
+		RequestDispatcher rd =req
+				.getRequestDispatcher("/contato-adicionado.jsp");
+			rd.forward(req,resp);
+			ContatoDao dao;
+			try {
+				dao = new ContatoDao();
+				dao.insert(contato);
+			} catch (ClassNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	}
 }
 
